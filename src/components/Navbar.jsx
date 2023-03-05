@@ -4,6 +4,13 @@ import "../App.css";
 import { Link } from "react-router-dom";
 import logoNAI from "../assets/pictures/logoNAI.png";
 
+function cacheBlogPage() {
+  import("../pages/BlogAi");
+}
+function cacheLoginPage() {
+  import("../pages/Login");
+}
+
 function Navbar() {
   return (
     <div className="navbar">
@@ -20,12 +27,12 @@ function Navbar() {
         <li>PRODUCTS</li>
         <li>SERVICES</li>
         <li>NEWS.AI</li>
-        <li>
+        <li onMouseEnter={cacheBlogPage}>
           <Link to="/blogAi" className="link">
             BLOG.AI
           </Link>
         </li>
-        <li>
+        <li onMouseEnter={cacheLoginPage}>
           <Link to="/explore" className="explore link">
             EXPLORE
           </Link>
